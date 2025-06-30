@@ -1,0 +1,29 @@
+/* src/components/MemoryLogger.css */
+.memory-logger form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .memory-logger textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    color: #eee;
+    padding: 0.5rem;
+    resize: vertical;
+  }
+  
+  .memory-logger .status {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .memory-logger .status.ok {
+    color: #8ce99a;
+  }
+  
+  .memory-logger .status.error {
+    color: #f08a8a;
+  }
+  

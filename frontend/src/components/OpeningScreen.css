@@ -1,0 +1,40 @@
+/* full-screen overlay */
+.opening-screen {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0f; /* match your bg */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* fade out the overlay once letters are in */
+    animation: screenFade 0.5s ease-out 2.5s forwards;
+  }
+  
+  /* individual letter zoom */
+  .opening-letter {
+    color: #8affc1;                /* softer neon green */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    opacity: 0;
+    display: inline-block;
+    transform: scale(0);
+    animation: zoomIn 0.8s ease-out forwards;
+  }
+  
+  /* zoom from tiny→full+fade in */
+  @keyframes zoomIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* fade overlay to reveal the app */
+  @keyframes screenFade {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

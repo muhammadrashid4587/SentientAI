@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  weaviate:
+    image: semitechnologies/weaviate:1.31.2
+    container_name: weaviate
+    ports:
+      - "8080:8080"
+    environment:
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      DEFAULT_VECTORIZER_MODULE: "text2vec-openai"
+      ENABLE_MODULES: "text2vec-openai"
+      OPENAI_APIKEY: "${OPENAI_API_KEY}"
+    volumes:
+      - weaviate_data:/var/lib/weaviate
+
+  sentient-backend:
+    build:
+      context: ./backend
+    container_name: sentient-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - weaviate
+    environment:
+      WEAVIATE_URL: "http://weaviate:8080"
+      OPENAI_API_KEY: "${OPENAI_API_KEY}"
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+
+  sentient-frontend:
+    build:
+      context: ./frontend
+    container_name: sentient-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - sentient-backend
+    command: serve -s dist -l 5173
+
+volumes:
+  weaviate_data:
+

@@ -1,0 +1,210 @@
+/* make sure your starfield canvas is full-screen & behind everything */
+canvas {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1;
+}
+
+/* the overall app wrapper */
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0d0f12; /* fallback */
+}
+
+/* pull your dashboard into the center and above the canvas */
+.app-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding-top: 5vh;
+}
+
+/* Neon header styling */
+.neon-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #d4f1be;
+  text-shadow:
+    0 0 8px rgba(212,241,190,0.5),
+    0 0 16px rgba(212,241,190,0.3),
+    0 0 24px rgba(212,241,190,0.2);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+.neon-header:hover {
+  transform: scale(1.05);
+}
+
+/* Card container */
+.card {
+  background: rgba(15,18,22,0.8);
+  border: 1px solid #2f6f4f;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 320px;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.6),
+    0 0 16px rgba(47,111,79,0.4);
+}
+
+/* Divider line */
+.divider {
+  border: none;
+  border-top: 1px solid #2f6f4f;
+  margin: 1.5rem 0;
+}
+
+/* Button tweaks */
+button {
+  background: #4fbf75;
+  color: #0d0f12;
+  border: none;
+  border-radius: 6px;
+  
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(79,191,117,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 20px rgba(79,191,117,0.6);
+}
+
+/* Inputs */
+textarea, input {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1d22;
+  color: #ddd;
+  border: 1px solid #2f6f4f;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+/* Headings inside card */
+.card h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/* intro typing screen */
+.intro-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0f12;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.intro-text {
+  font-family: 'Futurism', sans-serif;
+  font-size: 4rem;
+  color: #4fbf75;
+  text-shadow: 0 0 16px rgba(79,191,117,0.7);
+  white-space: pre; /* keep spaces */
+}
+
+/* overall app */
+.app {
+  width: 100%;
+  height: 100%;
+  background: #0d0f12;
+  overflow: hidden;
+}
+
+/* sit on top of the canvas */
+.app-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+}
+
+/* neon title */
+.neon-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #d4f1be;
+  text-shadow:
+    0 0 8px rgba(212,241,190,0.5),
+    0 0 16px rgba(212,241,190,0.3),
+    0 0 24px rgba(212,241,190,0.2);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+.neon-header:hover {
+  transform: scale(1.05);
+}
+
+/* dashboard card */
+.card {
+  background: rgba(15,18,22,0.8);
+  border: 1px solid #2f6f4f;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 320px;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.6),
+    0 0 16px rgba(47,111,79,0.4);
+}
+
+/* divider */
+.divider {
+  border: none;
+  border-top: 1px solid #2f6f4f;
+  margin: 1.5rem 0;
+}
+
+/* buttons */
+button {
+  background: #4fbf75;
+  color: #0d0f12;
+  border: none;
+  border-radius: 6px;
+  
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(79,191,117,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1rem;
+}
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 20px rgba(79,191,117,0.6);
+}
+
+/* form fields */
+textarea, input {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1d22;
+  color: #ddd;
+  border: 1px solid #2f6f4f;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+/* card headings */
+.card h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
